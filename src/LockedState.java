@@ -1,3 +1,5 @@
+// Locked is stop state
+
 public class LockedState implements State {
 
     Player player;
