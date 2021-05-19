@@ -13,18 +13,18 @@ public class ReadyState implements State{
 
     @Override
     public String onPlay() {
-        String action = player.s
-                player.changeState((new PlayingState(player)));
-        return null;
+        String action = player.startPlaying();
+        player.changeState((new PlayingState(player)));
+        return action;
     }
 
     @Override
     public String onNext() {
-        return null;
+        return "Locked....";
     }
 
     @Override
     public String onPrevious() {
-        return null;
+        return "Locked...";
     }
 }
