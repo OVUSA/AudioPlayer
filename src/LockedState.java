@@ -3,12 +3,17 @@ public class LockedState implements State {
     Player player;
     LockedState(Player player){
         this.player = player;
+        player.setPlaying(false);
     }
 
     @Override
     public String onLock() {
-
-        return null;
+        if(player.isPlaying()){
+            player.changeState(new ReadyState(player));
+            return "Stop playing";
+        }else {
+           return "Locked..";
+        }
     }
 
     @Override
@@ -24,6 +29,6 @@ public class LockedState implements State {
 
     @Override
     public String onPrevious() {
-        return null;
+        return "Locked...";
     }
 }

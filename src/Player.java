@@ -33,6 +33,26 @@ public class Player {
         return playing;
     }
 
+    public String startPlaying(){ return "Playing "+ playlist.get(currentTrack);}
+
+    public String nextTrack(){
+        currentTrack++;
+        if(currentTrack > playlist.size() -1){
+            currentTrack = 0;
+        }
+        return "Playing "+ playlist.get(currentTrack);
+    }
+
+    public String previousTrack(){
+        currentTrack--;
+        if(currentTrack < 0){
+            currentTrack = playlist.size()-1;
+        }
+            return "Playing "+ playlist.get(currentTrack);
+    }
+    public void setCurrentTrackAfterStop() {
+        this.currentTrack = 0;
+    }
 
 }
 
