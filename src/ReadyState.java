@@ -1,4 +1,9 @@
 public class ReadyState implements State{
+
+    Player player;
+    ReadyState(Player player){
+        this.player = player;
+    }
     @Override
     public String onLock() {
         return null;
